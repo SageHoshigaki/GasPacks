@@ -1,0 +1,77 @@
+@use "../../../../node_modules/bulma/sass/utilities/mixins";
+
+.has-mw-0 { max-width: 0rem; }
+.has-mw-none { max-width: none; }
+.has-mw-xs { max-width: 20rem; }
+.has-mw-sm { max-width: 24rem; }
+.has-mw-md { max-width: 28rem; }
+.has-mw-lg { max-width: 32rem; }
+.has-mw-xl { max-width: 36rem; }
+.has-mw-2xl { max-width: 42rem; }
+.has-mw-3xl { max-width: 48rem; }
+.has-mw-4xl { max-width: 56rem; }
+.has-mw-5xl { max-width: 64rem; }
+.has-mw-6xl { max-width: 72rem; }
+.has-mw-7xl { max-width: 80rem; }
+
+@mixin hasMaxWidth($resp) {
+    .has-mw-0-#{$resp} { max-width: 0rem; }
+    .has-mw-none-#{$resp} { max-width: none; }
+    .has-mw-xs-#{$resp} { max-width: 20rem; }
+    .has-mw-sm-#{$resp} { max-width: 24rem; }
+    .has-mw-md-#{$resp} { max-width: 28rem; }
+    .has-mw-lg-#{$resp} { max-width: 32rem; }
+    .has-mw-xl-#{$resp} { max-width: 36rem; }
+    .has-mw-2xl-#{$resp} { max-width: 42rem; }
+    .has-mw-3xl-#{$resp} { max-width: 48rem; }
+    .has-mw-4xl-#{$resp} { max-width: 56rem; }
+    .has-mw-5xl-#{$resp} { max-width: 64rem; }
+    .has-mw-6xl-#{$resp} { max-width: 72rem; }
+    .has-mw-7xl-#{$resp} { max-width: 80rem; }
+}
+
+
+
+@include mixins.mobile {
+    @include hasMaxWidth(mobile);
+}
+
+@include mixins.tablet {
+    @include hasMaxWidth(tablet);
+}
+
+@include mixins.tablet-only {
+    @include hasMaxWidth(tablet-only);
+}
+
+@include mixins.touch {
+    @include hasMaxWidth(touch);
+}
+
+@include mixins.desktop {
+    @include hasMaxWidth(desktop);
+}
+
+@include mixins.desktop-only {
+    @include hasMaxWidth(desktop-only);
+}
+
+@include mixins.until-widescreen {
+    @include hasMaxWidth(until-widescreen);
+}
+
+@include mixins.widescreen {
+    @include hasMaxWidth(widescreen);
+}
+
+@include mixins.widescreen-only {
+    @include hasMaxWidth(widescreen-only);
+}
+
+@include mixins.until-fullhd {
+    @include hasMaxWidth(until-fullhd);
+}
+
+@include mixins.fullhd {
+    @include hasMaxWidth(fullhd);
+}

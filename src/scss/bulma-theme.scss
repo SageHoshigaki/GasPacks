@@ -1,0 +1,715 @@
+// Scope variables
+
+$primary: #083bef !default;
+$info: #204ef0 !default;
+$success: #12b347 !default;
+$warning: #f59e0b !default;
+$danger: #ff3a3a !default;
+$light: #EFEFEF !default;
+$dark: #000 !default;
+
+$black: #000 !default;
+$black-bis: #151515 !default;
+$black-ter: #252525 !default;
+
+$grey-darker: #494949 !default;
+$grey-dark: #646464 !default;
+$grey: #909EBB !default;
+$grey-light: #A5A5A5 !default;
+$grey-lighter: #CACACA !default;
+$grey-lightest: #ebecf0 !default;
+
+$white-ter: #F7F7F7 !default;
+$white-bis: #E9E9E9 !default;
+$white: #ffffff !default;
+
+$orange: #ff470f !default;
+$yellow: #ffb70f !default;
+$green: #12b347 !default;
+$turquoise: #00d1b2 !default;
+$cyan: #66d1ff !default;
+$blue: #083bef !default;
+$purple: #b86bff !default;
+$red: #ff3a3a !default;
+
+$gap: 32px !default;
+$background: $white-ter !default;
+
+$radius: 0px !default;
+$radius-small: 1.25 !default;
+$radius-large: 2.5rem !default;
+$radius-rounded: 9999px !default;
+
+$size-7: 0.875rem !default;
+$size-4: 2rem !default;
+$size-5: 1.625rem !default;
+$size-3: 2.625rem !default;
+
+$size-normal: 1rem !default;
+$size-small: $size-7 !default;
+
+$scheme-h: 221 !default;
+$scheme-s: 14% !default;
+$scheme-main-bis: $white-bis !default;
+$scheme-main-ter: $white-ter !default;
+
+$scheme-main-l: 100% !default;
+$scheme-main: $white !default;
+
+$hover-border-l-delta: -10% !default;
+$active-border-l-delta: -20% !default;
+$text-strong-l: 21% !default;
+
+$focus-h: 65deg !default;
+$focus-s: 100% !default;
+$focus-l: 68% !default;
+$focus-shadow-size: 0 0 0 0.1875em !default;
+$focus-shadow-alpha: 0.25 !default;
+
+$text-light: 89%;
+$text-weak: $grey !default;
+$text-strong: #000 !default;
+$text-l: 29%;
+$text: #000;
+
+$control-height: 3.75em !default;
+$control-border-width: 1px !default;
+$control-padding-horizontal: calc(0.75em - $control-border-width) !default;
+
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+$weight-extrabold: 800 !default;
+$weight-medium: 500 !default;
+$weight-normal: 400 !default;
+
+$link: #000 !default;
+$link-focus-border: null !default;
+$link-h: 244deg !default; 
+$link-s: 72% !default; 
+$link-l: 52% !default;
+$link-invert-l: 100% !default;
+$link-active: #000 !default;
+$link-active-border: #000 !default;
+$link-text: #000 !default;
+$link-text-hover: #000 !default;
+$link-text-active: #000 !default;
+$link-invert: transparent !default;
+
+$primary-invert: transparent !default;
+
+$background-l: 96% !default;
+$border: #CACACA !default;
+$border-hover: #CACACA !default;
+$border-weak: $grey-lightest !default;
+$border-l: 86%;
+
+$fullhd: 1344px + 2 * $gap !default;
+$desktop: 960px + 2 * $gap !default;
+$tablet: 769px !default;
+
+$family-sans-serif: 'DM Sans'!default;
+$family-monospace: 'DM Sans'!default;
+$family-code: $family-monospace !default;
+
+$block-spacing: 1.5rem !default;
+
+$shadow: 0 0.5em 1em -0.125em #090a0c1a 0 0px 0 1px #090a0c33 !default;
+
+// Shuffle extensions variables
+
+$notification-color: null !default;
+$notification-font-size: null !default;
+
+$notification-border-width: 0 !default;
+$notification-border-top-width: $notification-border-width !default;
+$notification-border-right-width: $notification-border-width !default;
+$notification-border-bottom-width: $notification-border-width !default;
+$notification-border-left-width: $notification-border-width !default;
+
+$notification-radius: null;
+$notification-colors: null;
+
+$notification-border-top-right-radius: $notification-radius !default;
+$notification-border-top-left-radius: $notification-radius !default;
+$notification-border-bottom-right-radius: $notification-radius !default;
+$notification-border-bottom-left-radius: $notification-radius !default;
+
+$navbar-item-font-weight: 400 !default;
+$navbar-item-font-size: 1rem !default;
+$navbar-item-padding-x: 1.5rem !default;
+$navbar-item-padding-y: .5rem !default;
+
+$radius-2x-large: 9999px;
+
+$box-border-width: 1px !default;
+$box-border-color: #E9E9E9 !default;
+$box-border-style: solid !default;
+
+$button-text-transform: null !default;
+
+$body-letter-spacing: null !default;
+
+$leading-1: null !default;
+$leading-2: null !default;
+$leading-3: null !default;
+$leading-4: null !default;
+$leading-5: null !default;
+$leading-6: null !default;
+$leading-7: null !default;
+
+$blur-background-color: null !default;
+$blur-background-filter: null !default; 
+
+$input-family: null !default;
+$input-border-color: #CACACA !default;
+$heading-text-transform: none !default;
+
+@use "../../node_modules/bulma/sass" with (
+    $scheme-h: $scheme-h,
+    $scheme-s: $scheme-s,
+    $dark-l: 20%,
+    $light-l: 90%,
+    $black: $black,
+    $black-bis: $black-bis,
+    $black-ter: $black-ter,
+    $grey-darker: $grey-darker,
+    $grey-dark: $grey-dark,
+    $grey: $grey,
+    $grey-light: $grey-light,
+    $grey-lighter: $grey-lighter,
+    $grey-lightest: $grey-lightest,
+    $white-ter: $white-ter,
+    $white-bis: $white-bis,
+    $white: $white,
+    $orange: $orange,
+    $yellow: $yellow,
+    $green: $green,
+    $turquoise: $turquoise,
+    $cyan: $cyan,
+    $blue: $blue,
+    $purple: $purple,
+    $red: $red,
+    $render-mode: optimizeLegibility,
+    $size-1: 5rem,
+    $size-2: 3.875rem,
+    $size-3: $size-3,
+    $size-4: $size-4,
+    $size-5: $size-5,
+    $size-6: 1.125rem,
+    $size-7: $size-7,
+    $weight-light: 300,
+    $weight-normal: $weight-normal,
+    $weight-medium: $weight-medium,
+    $weight-semibold: $weight-semibold,
+    $weight-bold: $weight-bold,
+    $weight-extrabold: $weight-extrabold,
+    $block-spacing: 1.5rem,
+    $gap: $gap,
+    $tablet: $tablet,
+    $desktop: $desktop,
+    $widescreen: 1152px + 2 * $gap,
+    $widescreen-enabled: true,
+    $fullhd: $fullhd,
+    $fullhd-enabled: true,
+    $easing: ease-out,
+    $radius-small: $radius-small,
+    $radius: $radius,
+    $radius-medium: 0.5em,
+    $radius-large: $radius-large,
+    $radius-rounded: $radius-rounded,
+    $speed: 86ms,
+    $variable-columns: true,
+    $rtl: false,
+    $class-prefix: "",
+    $cssvars-prefix: "bulma-",
+    $helpers-prefix: "is-",
+    $helpers-has-prefix: "has-",
+    $scheme-main: $scheme-main,
+    $scheme-main-bis: $scheme-main-bis,
+    $scheme-main-ter: $scheme-main-ter,
+    $scheme-invert: $black,
+    $scheme-invert-bis: $black-bis,
+    $scheme-invert-ter: $black-ter,
+    $text: $text,
+    $text-invert: $text,
+    $text-weak: $text-weak,
+    $text-strong: $text-strong,
+    $primary: $primary,
+    $info: $info,
+    $success: $success,
+    $warning: $warning,
+    $danger: $danger,
+    $light: $light,
+    $dark: $dark,
+    $link: $link,
+    $background: $background,
+    $border: $border,
+    $border-weak: $border-weak,
+    $code: $red,
+    $code-background: $background,
+    $pre: $text,
+    $pre-background: $background,
+    $family-primary: $family-sans-serif,
+    $family-secondary: $family-sans-serif,
+    $family-code: $family-monospace,
+    $size-small: $size-7,
+    $size-normal: $size-normal,
+    $size-medium: $size-5,
+    $size-large: $size-4,
+    $shadow-color: $black,
+    $custom-colors: null,
+    $custom-shades: null,
+    $control-radius: 0,
+    $control-radius-small: $radius-small,
+    $control-border-width: $control-border-width,
+    $control-size: $size-normal,
+    $control-height: $control-height,
+    $control-line-height: 1.5,
+    $control-padding-vertical: 1.25rem,
+    $control-padding-horizontal: 2rem,
+    $control-focus-shadow-l: 50%,
+    $section-padding: 5rem 1.5rem,
+    $section-padding-desktop: 5rem 3rem,
+    $section-padding-medium: 9rem 4.5rem,
+    $section-padding-large: 18rem 6rem,
+    $media-border-size: 1px,
+    $media-spacing: 1rem,
+    $media-spacing-large: 1.5rem,
+    $media-content-spacing: 0.75rem,
+    $media-level-1-spacing: 0.75rem,
+    $media-level-1-content-spacing: 0.5rem,
+    $media-level-2-spacing: 0.5rem,
+    $level-item-spacing: calc($block-spacing * 0.5),
+    $hero-body-padding: 3rem 1.5rem,
+    $hero-body-padding-tablet: 3rem 3rem,
+    $hero-body-padding-small: 1.5rem,
+    $hero-body-padding-medium: 9rem 4.5rem,
+    $hero-body-padding-large: 18rem 6rem,
+    //$hero-colors: dv.$colors,
+    $footer-background-color: $scheme-main-bis,
+    $footer-color: false,
+    $footer-padding: 3rem 1.5rem 6rem,
+    $container-offset: 2 * $gap,
+    $container-max-width: 1280px,
+    $spacing-horizontal: "x",
+    $spacing-vertical: "y",
+    $column-gap: 0.75rem,
+    $label-color: #646464,
+    $label-spacing: 0.5em,
+    $label-weight: 400,
+    $help-size: $size-small,
+    //$label-colors: shared.$form-colors,
+    $field-block-spacing: 0.75rem,
+    //$form-colors: dv.$colors,
+    $input-h: $scheme-h,
+    $input-s: $scheme-s,
+    $input-l: $scheme-main-l,
+    $input-border-style: solid,
+    $input-border-width: $control-border-width,
+    $input-border-l: $border-l,
+    $input-border-l-delta: 0%,
+    $input-hover-border-l-delta: $hover-border-l-delta,
+    $input-active-border-l-delta: $active-border-l-delta,
+    $input-color-l: $text-strong-l,
+    $input-background-l: $scheme-main-l,
+    $input-background-l-delta: 0%,
+    $input-height: $control-height,
+    $input-focus-h: $focus-h,
+    $input-focus-s: $focus-s,
+    $input-focus-l: $focus-l,
+    $input-focus-shadow-size: $focus-shadow-size,
+    $input-focus-shadow-alpha: $focus-shadow-alpha,
+    $input-disabled-color: $text-weak,
+    $input-disabled-background-color: $background,
+    $input-disabled-border-color: $background,
+    $input-arrow: $link,
+    $input-icon-color: $text-light,
+    $input-icon-hover-color: $text-weak,
+    $input-icon-focus-color: $link,
+    $input-radius: 999px,
+    //$select-colors: shared.$form-colors,
+    $textarea-padding: $control-padding-horizontal,
+    $textarea-max-height: 40em,
+    $textarea-min-height: 8em,
+    //$textarea-colors: shared.$form-colors,
+    $file-radius: $radius,
+    $file-cta-color: $text,
+    $file-cta-hover-color: $text-strong,
+    $file-cta-active-color: $text-strong,
+    $file-name-border-color: $border,
+    $file-name-border-style: solid,
+    $file-name-border-width: 1px 1px 1px 0,
+    $file-name-max-width: 16em,
+    //$file-colors: shared.$form-colors,
+    $title-color: #000,
+    $title-family: "General Sans",
+    $title-size: $size-3,
+    $title-weight: 400,
+    $title-line-height: 1,
+    $title-strong-color: inherit,
+    $title-strong-weight: inherit,
+    $title-sub-size: 0.75em,
+    $title-sup-size: 0.75em,
+    $subtitle-color: #646464,
+    $subtitle-family: "General Sans",
+    $subtitle-size: 1rem,
+    $subtitle-weight: 400,
+    $subtitle-line-height: 1.4,
+    $subtitle-strong-color: $text-strong,
+    $subtitle-strong-weight: $weight-semibold,
+    $tag-radius: 9999px,
+    $tag-delete-margin: 1px,
+    //$tag-colors: dv.$colors,
+    $table-color: $text-strong,
+    $table-background-color: $scheme-main,
+    $table-cell-border-color: $border,
+    $table-cell-border-style: solid,
+    $table-cell-border-width: 0 0 1px,
+    $table-cell-padding: 0.5em 0.75em,
+    $table-cell-heading-color: $text-strong,
+    $table-cell-text-align: left,
+    $table-head-cell-border-width: 0 0 2px,
+    $table-head-cell-color: $text-strong,
+    $table-foot-cell-border-width: 2px 0 0,
+    $table-foot-cell-color: $text-strong,
+    $table-head-background-color: transparent,
+    $table-body-background-color: transparent,
+    $table-foot-background-color: transparent,
+    $table-row-hover-background-color: $scheme-main-bis,
+    $table-row-active-background-color: $primary,
+    $table-row-active-color: $primary-invert,
+    $table-striped-row-even-background-color: $scheme-main-bis,
+    //$table-colors: dv.$colors,
+    $progress-bar-background-color: $border-weak,
+    $progress-value-background-color: $text,
+    $progress-border-radius: $radius-rounded,
+    $progress-indeterminate-duration: 1.5s,
+    //$progress-colors: dv.$colors,
+    $notification-code-background-color: $scheme-main,
+    $notification-radius: $radius,
+    $notification-padding: 1.375em 1.5em,
+    //$notification-colors: dv.$colors,
+    $dimensions: 16 24 32 48 64 96 128,
+    $icon-dimensions: 1.5rem,
+    $icon-dimensions-small: 1rem,
+    $icon-dimensions-medium: 2rem,
+    $icon-dimensions-large: 3rem,
+    $icon-text-spacing: 0.25em,
+    $content-heading-color: $text-strong,
+    $content-heading-weight: $weight-extrabold,
+    $content-heading-line-height: 1.125,
+    $content-block-margin-bottom: 1em,
+    $content-blockquote-background-color: $background,
+    $content-blockquote-border-left: 5px solid $border,
+    $content-blockquote-padding: 1.25em 1.5em,
+    $content-pre-padding: 1.25em 1.5em,
+    $content-table-cell-border: 1px solid $border,
+    $content-table-cell-border-width: 0 0 1px,
+    $content-table-cell-padding: 0.5em 0.75em,
+    $content-table-cell-heading-color: $text-strong,
+    $content-table-head-cell-border-width: 0 0 2px,
+    $content-table-head-cell-color: $text-strong,
+    $content-table-body-last-row-cell-border-bottom-width: 0,
+    $content-table-foot-cell-border-width: 2px 0 0,
+    $content-table-foot-cell-color: $text-strong,
+    $button-weight: $weight-medium,
+    $button-family: "General Sans",
+    $button-border-color: $border,
+    $button-border-style: solid,
+    $button-border-width: 1.5px,
+    $button-padding-vertical: 1.25rem,
+    $button-padding-horizontal: 2rem,
+    $button-rounded-padding-horizontal-offset: 0.25em,
+    $button-focus-border-color: $link-focus-border,
+    $button-focus-box-shadow-size: 0 0 0 0.125em,
+    $button-active-color: $link-active,
+    $button-active-border-color: $link-active-border,
+    $button-text-color: $text,
+    $button-text-decoration: underline,
+    $button-text-hover-background-color: $background,
+    $button-text-hover-color: $text-strong,
+    $button-ghost-background: none,
+    $button-ghost-border-color: transparent,
+    $button-ghost-color: $link-text,
+    $button-ghost-decoration: none,
+    $button-ghost-hover-color: $link,
+    $button-ghost-hover-decoration: none,
+    $button-disabled-background-color: $scheme-main,
+    $button-disabled-border-color: $border,
+    $button-disabled-shadow: none,
+    $button-disabled-opacity: 0.5,
+    $button-static-color: $text-weak,
+    $button-static-background-color: $scheme-main-ter,
+    $button-static-border-color: $border,
+    //$button-colors: dv.$colors,
+    $box-background-color: transparent,
+    $box-color: $text,
+    $box-radius: 1.25rem,
+    $box-shadow: none,
+    $box-padding: 1.25rem,
+    $tabs-border-bottom-color: $border,
+    $tabs-border-bottom-style: solid,
+    $tabs-border-bottom-width: 1px,
+    $tabs-link-color: $text,
+    $tabs-link-hover-border-bottom-color: $text-strong,
+    $tabs-link-hover-color: $text-strong,
+    $tabs-link-active-border-bottom-color: $link-text,
+    $tabs-link-active-color: $link-text,
+    $tabs-link-padding: 0.5em 1em,
+    $tabs-boxed-link-radius: $radius,
+    $tabs-boxed-link-hover-background-color: $background,
+    $tabs-boxed-link-hover-border-bottom-color: $border,
+    $tabs-boxed-link-active-background-color: $scheme-main,
+    $tabs-boxed-link-active-border-color: $border,
+    $tabs-boxed-link-active-border-bottom-color: transparent,
+    $tabs-toggle-link-border-color: $border,
+    $tabs-toggle-link-border-style: solid,
+    $tabs-toggle-link-border-width: 1px,
+    $tabs-toggle-link-hover-background-color: $background,
+    $tabs-toggle-link-hover-border-color: $border-hover,
+    $tabs-toggle-link-radius: $radius,
+    $tabs-toggle-link-active-background-color: $link,
+    $tabs-toggle-link-active-border-color: $link,
+    $tabs-toggle-link-active-color: $link-invert,
+    $panel-margin: $block-spacing,
+    $panel-item-border: 1px solid $border-weak,
+    $panel-radius: 0.25rem,
+    $panel-shadow: none,
+    $panel-heading-line-height: 1.25,
+    $panel-heading-padding: 1em 1.25em,
+    $panel-heading-radius: $radius,
+    $panel-heading-size: 1.25em,
+    $panel-heading-weight: $weight-bold,
+    $panel-tabs-font-size: 1em,
+    $panel-tab-border-bottom-color: $border,
+    $panel-tab-border-bottom-style: solid,
+    $panel-tab-border-bottom-width: 1px,
+    $panel-tab-active-color: $link-active,
+    $panel-list-item-color: $text,
+    $panel-list-item-hover-color: $link,
+    $panel-block-color: $text-strong,
+    $panel-block-hover-background-color: $background,
+    $panel-block-active-border-left-color: $link,
+    $panel-block-active-color: $link-active,
+    $panel-block-active-icon-color: $link,
+    $panel-icon-color: $text-weak,
+    //$panel-colors: dv.$colors,
+    $pagination-margin: -0.25rem,
+    $pagination-min-width: $control-height,
+    $pagination-item-border-style: solid,
+    $pagination-item-border-width: $control-border-width,
+    $pagination-item-font-size: 1em,
+    $pagination-item-margin: 0.25rem,
+    $pagination-item-padding-left: 0.5rem,
+    $pagination-item-padding-right: 0.5rem,
+    $pagination-nav-padding-left: 0.5rem,
+    $pagination-nav-padding-right: 0.5rem,
+    $pagination-disabled-color: $text-weak,
+    $pagination-disabled-background-color: $border,
+    $pagination-disabled-border-color: $border,
+    $pagination-current-color: $link-invert,
+    $pagination-current-background-color: $link,
+    $pagination-current-border-color: $link,
+    $pagination-ellipsis-color: $text-weak,
+    $navbar-h: $scheme-h,
+    $navbar-s: $scheme-s,
+    $navbar-l: $scheme-main-l,
+    $navbar-background-color: $scheme-main,
+    $navbar-box-shadow-size: 0 0.125em 0 0,
+    $navbar-box-shadow-color: $background,
+    $navbar-height: 3.25rem,
+    $navbar-padding-vertical: 1rem,
+    $navbar-padding-horizontal: 2rem,
+    $navbar-z: 30,
+    $navbar-fixed-z: 30,
+    $navbar-item-background-a: 0,
+    $navbar-item-background-l: $scheme-main-l,
+    $navbar-item-background-l-delta: 0%,
+    $navbar-item-color-l: $text-l,
+    $navbar-item-selected-h: $link-h,
+    $navbar-item-selected-s: $link-s,
+    $navbar-item-selected-l: $link-l,
+    $navbar-item-selected-background-l: $link-l,
+    $navbar-item-selected-color-l: $link-invert-l,
+    $navbar-item-img-max-height: 1.75rem,
+    $navbar-dropdown-item-h: $scheme-h,
+    $navbar-dropdown-item-s: $scheme-s,
+    $navbar-dropdown-item-l: $scheme-main-l,
+    $navbar-dropdown-item-background-l: $scheme-main-l,
+    $navbar-dropdown-item-color-l: $text-l,
+    $navbar-burger-color: $link,
+    $navbar-tab-hover-background-color: transparent,
+    $navbar-tab-hover-border-bottom-color: $link,
+    $navbar-tab-active-color: $link,
+    $navbar-tab-active-background-color: transparent,
+    $navbar-tab-active-border-bottom-color: $link,
+    $navbar-tab-active-border-bottom-style: solid,
+    $navbar-tab-active-border-bottom-width: 0.1875em,
+    $navbar-dropdown-background-color: $scheme-main,
+    $navbar-dropdown-border-l: $border-l,
+    $navbar-dropdown-border-style: solid,
+    $navbar-dropdown-border-width: 0.125em,
+    $navbar-dropdown-offset: -0.25em,
+    $navbar-dropdown-arrow: $link,
+    $navbar-dropdown-radius: $radius-large,
+    $navbar-dropdown-z: 20,
+    $navbar-dropdown-boxed-radius: $radius-large,
+    $navbar-divider-background-l: $background-l,
+    $navbar-divider-height: 0.125em,
+    $navbar-bottom-box-shadow-size: 0 -0.125em 0 0,
+    $navbar-breakpoint: $desktop,
+    //$navbar-colors: dv.$colors,
+    $modal-z: 40,
+    $modal-content-width: 40rem,
+    $modal-content-margin-mobile: 1.25rem,
+    $modal-content-spacing-mobile: 10rem,
+    $modal-content-spacing-tablet: 2.5rem,
+    $modal-close-dimensions: 2.5rem,
+    $modal-close-right: 1.25rem,
+    $modal-close-top: 1.25rem,
+    $modal-card-spacing: 2.5rem,
+    $modal-card-head-background-color: $scheme-main,
+    $modal-card-head-padding: 2rem,
+    $modal-card-head-radius: $radius-large,
+    $modal-card-title-color: $text-strong,
+    $modal-card-title-line-height: 1,
+    $modal-card-title-size: $size-4,
+    $modal-card-foot-background-color: $scheme-main-bis,
+    $modal-card-foot-radius: $radius-large,
+    $modal-card-body-background-color: $scheme-main,
+    $modal-card-body-padding: 2rem,
+    $modal-breakpoint: $tablet,
+    $message-border-l-delta: -20%,
+    $message-radius: $radius,
+    $message-header-weight: $weight-semibold,
+    $message-header-padding: 1em 1.25em,
+    $message-header-radius: $radius,
+    $message-body-border-width: 0 0 0 4px,
+    $message-body-color: $text,
+    $message-body-padding: 1.25em 1.5em,
+    $message-body-radius: $radius-small,
+    $message-body-pre-code-background-color: transparent,
+    $message-header-body-border-width: 0,
+    //$message-colors: dv.$colors,
+    $menu-item-radius: $radius-small,
+    $menu-list-border-left: 1px solid $border,
+    $menu-list-line-height: 1.25,
+    $menu-list-link-padding: 0.5em 0.75em,
+    $menu-nested-list-margin: 0.75em,
+    $menu-nested-list-padding-left: 0.75em,
+    $menu-label-color: $text-weak,
+    $menu-label-font-size: 0.75em,
+    $menu-label-letter-spacing: 0.1em,
+    $menu-label-spacing: 1em,
+    $dropdown-menu-min-width: 12rem,
+    $dropdown-content-background-color: $scheme-main,
+    $dropdown-content-offset: 0.25rem,
+    $dropdown-content-padding-bottom: 0.5rem,
+    $dropdown-content-padding-top: 0.5rem,
+    $dropdown-content-radius: $radius,
+    $dropdown-content-shadow: $shadow,
+    $dropdown-content-z: 20,
+    $dropdown-divider-background-color: $border-weak,
+    $card-color: $text,
+    $card-background-color: $scheme-main,
+    $card-shadow: $shadow,
+    $card-radius: 0.25rem,
+    $card-header-background-color: transparent,
+    $card-header-color: $text-strong,
+    $card-header-padding: 0.75rem 1rem,
+    $card-header-weight: $weight-bold,
+    $card-content-background-color: transparent,
+    $card-content-padding: 1.5rem,
+    $card-footer-background-color: transparent,
+    $card-footer-border-top: 1px solid $border-weak,
+    $card-footer-padding: 0.75rem,
+    $card-media-margin: $block-spacing,
+    $breadcrumb-item-color: $link-text,
+    $breadcrumb-item-hover-color: $link-text-hover,
+    $breadcrumb-item-active-color: $link-text-active,
+    $breadcrumb-item-padding-vertical: 0,
+    $breadcrumb-item-padding-horizontal: 0.75em,
+    $breadcrumb-item-separator-color: $border,
+    $skeleton-background: $border,
+    $skeleton-radius: $radius-small,
+    $skeleton-block-min-height: 4.5em,
+    $skeleton-lines-gap: 0.75em,
+    $skeleton-line-height: 0.75em,
+    $body-background-color: $scheme-main,
+    $body-size: 1em,
+    $body-min-width: 300px,
+    $body-rendering: optimizeLegibility,
+    $body-family: "General Sans",
+    $body-overflow-x: hidden,
+    $body-overflow-y: scroll,
+    $body-color: #000000,
+    $body-font-size: 1em,
+    $body-weight: $weight-normal,
+    $body-line-height: 1.4,
+    $code-family: $family-code,
+    $code-padding: 0.25em 0.5em 0.25em,
+    $code-weight: normal,
+    $code-size: 0.875em,
+    $small-font-size: 0.875em,
+    $hr-background-color: $background,
+    $hr-height: 2px,
+    $hr-margin: 1.5rem 0,
+    $strong-color: $text-strong,
+    $strong-weight: $weight-semibold,
+    $pre-font-size: 0.875em,
+    $pre-padding: 1.25rem 1.5rem,
+    $pre-code-font-size: 1em,
+    $spacing-values: (
+        'auto': auto,
+        0: 0px,
+        1: 0.25rem,
+        2: 0.5rem,
+        3: 0.75rem,
+        4: 1rem,
+        5: 1.25rem,
+        6: 1.5rem,
+        7: 1.75rem,
+        8: 2rem,
+        9: 2.25rem,
+        10: 2.5rem,
+        11: 2.75rem,
+        12: 3rem,
+        14: 3.5rem,
+        16: 4rem,
+        20: 5rem,
+        24: 6rem,
+        28: 7rem,
+        32: 8rem,
+        36: 9rem,
+        40: 10rem,
+        44: 11rem,
+        48: 12rem,
+        52: 13rem,
+        56: 14rem,
+        60: 15rem,
+        64: 16rem,
+        72: 18rem,
+        80: 20rem,
+        96: 24rem
+    )
+);
+
+@import "asitra-extension/maxmaxmax/variables";
+
+@import "../../node_modules/bulma/sass/themes/_index";
+@import "../../node_modules/bulma/sass/utilities/_index";
+@import "../../node_modules/bulma/sass/base/_index";
+@import "../../node_modules/bulma/sass/elements/_index";
+@import "../../node_modules/bulma/sass/form/_index";
+@import "../../node_modules/bulma/sass/components/_index";
+@import "../../node_modules/bulma/sass/grid/_index";
+@import "../../node_modules/bulma/sass/layout/_index";
+@import "../../node_modules/bulma/sass/helpers/_index";
+
+@import "asitra-extension/maxmaxmax/extension-max-spacing";
+@import "asitra-extension/maxmaxmax/extension-max-width";
+
+@import "asitra-extension/shuffle-extension";
+
+//VARIABLES
+//DEBUG

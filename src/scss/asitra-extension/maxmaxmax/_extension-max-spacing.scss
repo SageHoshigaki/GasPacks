@@ -1,0 +1,214 @@
+@use "../../../../node_modules/bulma/sass/utilities/mixins";
+
+@mixin negativeMargins() {
+    @if $enable-negative-margins {
+        @each $name, $value in $spacing-values {
+            @if $name != 'auto' and $name != 0 {
+                // All directions
+                .-m-#{$name} {
+                    margin: -#{$value} !important
+                }
+    
+                // Cardinal directions
+                @each $direction, $suffix in $spacing-directions {
+                    .-m#{$suffix}-#{$name} {
+                        margin-#{$direction}: -#{$value}!important
+                    }
+                }
+    
+                // Horizontal axis
+                @if $spacing-horizontal != null {
+                    .-m#{$spacing-horizontal}-#{$name} {
+                        margin-left: -#{$value} !important;
+                        margin-right: -#{$value} !important;
+                    }
+                }
+    
+                // Vertical axis
+                @if $spacing-vertical != null {
+                    .-m#{$spacing-vertical}-#{$name} {
+                        margin-top: -#{$value} !important;
+                        margin-bottom: -#{$value} !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin margins() {
+    @each $name, $value in $spacing-values {
+        @if $name != 'auto' and $name != 0 {
+            // All directions
+            .m-#{$name} {
+                margin: #{$value} !important
+            }
+
+            // Cardinal directions
+            @each $direction, $suffix in $spacing-directions {
+                .m#{$suffix}-#{$name} {
+                    margin-#{$direction}: #{$value}!important
+                }
+            }
+
+            // Horizontal axis
+            @if $spacing-horizontal != null {
+                .m#{$spacing-horizontal}-#{$name} {
+                    margin-left: #{$value} !important;
+                    margin-right: #{$value} !important;
+                }
+            }
+
+            // Vertical axis
+            @if $spacing-vertical != null {
+                .m#{$spacing-vertical}-#{$name} {
+                    margin-top: #{$value} !important;
+                    margin-bottom: #{$value} !important;
+                }
+            }
+        }
+    }
+}
+
+@mixin paddings() {
+    @each $name, $value in $spacing-values {
+        @if $name != 'auto' and $name != 0 {
+            // All directions
+            .p-#{$name} {
+                padding: #{$value} !important
+            }
+
+            // Cardinal directions
+            @each $direction, $suffix in $spacing-directions {
+                .p#{$suffix}-#{$name} {
+                    padding-#{$direction}: #{$value}!important
+                }
+            }
+
+            // Horizontal axis
+            @if $spacing-horizontal != null {
+                .p#{$spacing-horizontal}-#{$name} {
+                    padding-left: #{$value} !important;
+                    padding-right: #{$value} !important;
+                }
+            }
+
+            // Vertical axis
+            @if $spacing-vertical != null {
+                .p#{$spacing-vertical}-#{$name} {
+                    padding-top: #{$value} !important;
+                    padding-bottom: #{$value} !important;
+                }
+            }
+        }
+    }
+}
+
+@mixin spacingResponsive($resp) {
+    @each $property, $shortcut in $spacing-shortcuts {
+        @each $name, $value in $spacing-values {
+            @if $shortcut != 'p' and shortcut != 'pr' != and shortcut != 'pb' != and shortcut != 'pl' != and shortcut != 'pt' and $value != 'auto' {
+                // All directions
+                .#{$shortcut}-#{$name}-#{$resp} {
+                    #{$property}: $value !important
+                }
+                
+                @if $enable-negative-margins and $property == 'margin' and $name != 'auto' and $name != 0 {
+                    .-#{$shortcut}-#{$name}-#{$resp} {
+                        #{$property}: -#{$value} !important
+                    }                
+                }
+    
+                // Cardinal directions
+                @each $direction, $suffix in $spacing-directions {
+                    .#{$shortcut}#{$suffix}-#{$name}-#{$resp} {
+                        #{$property}-#{$direction}: $value !important
+                    }
+    
+                    @if $enable-negative-margins and $property == 'margin' and $name != 'auto' and $name != 0 {
+                        .-#{$shortcut}#{$suffix}-#{$name}-#{$resp} {
+                            #{$property}-#{$direction}: -#{$value} !important
+                        }                    
+                    }
+                }
+                // Horizontal axis
+                @if $spacing-horizontal != null {
+                    .#{$shortcut}#{$spacing-horizontal}-#{$name}-#{$resp} {
+                        #{$property}-left: $value !important;
+                        #{$property}-right: $value !important;
+                    }
+    
+                    @if $enable-negative-margins and $property == 'margin' and $name != 'auto' and $name != 0 {
+                        .-#{$shortcut}#{$spacing-horizontal}-#{$name}-#{$resp} {
+                            #{$property}-left: -#{$value} !important;
+                            #{$property}-right: -#{$value} !important;
+                        }
+                    }
+                }
+                // Vertical axis
+                @if $spacing-vertical != null {
+                    .#{$shortcut}#{$spacing-vertical}-#{$name}-#{$resp} {
+                        #{$property}-top: $value !important;
+                        #{$property}-bottom: $value !important;
+                    }
+    
+                    @if $enable-negative-margins and $property == 'margin' and $name != 'auto' and $name != 0 {
+                        .-#{$shortcut}#{$spacing-vertical}-#{$name}-#{$resp} {
+                            #{$property}-top: -#{$value} !important;
+                            #{$property}-bottom: -#{$value} !important;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include negativeMargins();
+@include margins();
+@include paddings();
+
+@include mixins.mobile {
+    @include spacingResponsive(mobile);
+}
+
+@include mixins.tablet {
+    @include spacingResponsive(tablet);
+}
+
+@include mixins.tablet-only {
+    @include spacingResponsive(tablet-only);
+}
+
+@include mixins.touch {
+    @include spacingResponsive(touch);
+}
+
+@include mixins.desktop {
+    @include spacingResponsive(desktop);
+}
+
+@include mixins.desktop-only {
+    @include spacingResponsive(desktop-only);
+}
+
+@include mixins.until-widescreen {
+    @include spacingResponsive(until-widescreen);
+}
+
+@include mixins.widescreen {
+    @include spacingResponsive(widescreen);
+}
+
+@include mixins.widescreen-only {
+    @include spacingResponsive(widescreen-only);
+}
+
+@include mixins.until-fullhd {
+    @include spacingResponsive(until-fullhd);
+}
+
+@include mixins.fullhd {
+    @include spacingResponsive(fullhd);
+}
